@@ -1,3 +1,7 @@
+# User data folders
+data/
+_simulations/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
