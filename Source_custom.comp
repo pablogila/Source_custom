@@ -9,14 +9,16 @@
 *
 * %I
 * Written by: Pablo Gila-Herranz, based on 'Source_pulsed' by K. Lieutenant
-* Date: April 10, 2025
-* Version: 2.1.0
+* Date: April 2025
+* Version: 2.0.1rc1
 * Origin: Materials Physics Center (CFM-MPC), CSIC-UPV/EHU
 *
 * A flexible pulsed or continuous source with customisable parameters. Multiple pulses can be simulated over time.
 *
 * %D
 * Produces a custom pulse spectrum with a wavelength distribution as a sum of up to 3 Maxwellian distributions and one of undermoderated neutrons.
+*
+* <b>Usage:</b>
 *
 * By default, all Maxwellian distributions are assumed to come from anywhere in the moderator.
 * A custom radius r_i can be defined such that the central circle is at temperature T1,
@@ -33,6 +35,8 @@
 *
 * Parameters xwidth and yheight must be provided for rectangular moderators, otherwise a circular shape is assumed.
 *
+* <b>Model description:</b>
+*
 * The normalised Maxwellian distribution for moderated neutrons is defined by [1]
 *   $M(\lambda)=\frac{2a^2}{T^2\lambda^5}\exp\left(-\frac{a}{T\lambda^{2}}\right)$
 * where
@@ -45,7 +49,7 @@
 *   $N_{t>t_p}=\exp\left(-\frac{t-t_p}{\tau}\right)-\exp\left(-\frac{t}{\tau/n}\right)$
 * where tp is the pulse period, tau is the pulse decay time constant, and n is the ratio of decay to ascend time constants.
 *
-* Parameters for some sources:
+* <b>Parameters for some sources:</b>
 *
 *   HBS thermal source:
 *     t_pulse=0.016, freq=24.0, xwidth=0.04, yheight=0.04,
@@ -67,7 +71,7 @@
 *     t_pulse=1, freq=1, xwidth=0.1, yheight=0.1,
 *     T1=296.2, I1=8.5e+11, T2=40.68, I2=5.2e+11
 *
-* References:
+* <b>References:</b>
 *   [1] J. M. Carpenter et al, Nuclear Instruments and Methods in Physics Research Section A, 234, 542–551 (1985).
 *   [2] J. M. Carpenter and W. B. Yelon, Methods in Experimental Physics 23, p. 127, Chapter 2, Neutron Sources (1986).
 *
@@ -103,6 +107,9 @@
 * n_um:           [1]        Ratio of pulse decay constant to pulse ascend constant of under-moderated neutrons
 * chi_um:        [1/AA]      Factor for the wavelength dependence of under-moderated neutrons
 * kap_um:         [1]        Scaling factor for the flux of under-moderated neutrons
+*
+* %L
+* <a href="https://github.com/pablogila/Source_custom">Interactive tool</a> to fit custom neutron sources.
 *
 * %E
 *******************************************************************************/
