@@ -10,7 +10,7 @@
 * %I
 * Written by: Pablo Gila-Herranz, based on 'Source_pulsed' by K. Lieutenant
 * Date: April 2025
-* Version: 2.0.1rc1
+* Version: 2.0.1
 * Origin: Materials Physics Center (CFM-MPC), CSIC-UPV/EHU
 *
 * A flexible pulsed or continuous source with customisable parameters. Multiple pulses can be simulated over time.
@@ -29,6 +29,8 @@
 * The input flux is in units of [1/(cm^2 sr s AA)], and the output flux is per second, regardless of the number of pulses.
 * This means that the intensity spreads over n_pulses, so that the units of neutrons per second are preserved.
 * To simulate only the neutron counts of a single pulse, the input flux should be divided by the frequency.
+* Bear in mind that the maximum emission time is given by t_pulse * tmax_multiplier,
+* so short pulses with long tails may require a higher tmax_multiplier value (3 by default).
 *
 * To simulate a continuous source, set a pulse length equal to the pulse period (e.g. t_pulse=1.0, freq=1.0).
 * Note that this continuous beam is simulated over time, unlike other continuous sources in McStas which produce a Dirac delta at time 0.
@@ -109,7 +111,7 @@
 * kap_um:         [1]        Scaling factor for the flux of under-moderated neutrons
 *
 * %L
-* <a href="https://github.com/pablogila/Source_custom">Interactive tool</a> to fit custom neutron sources.
+* This model is implemented in an <a href="https://github.com/pablogila/Source_custom">interactive notebook</a> to fit custom neutron sources.
 *
 * %E
 *******************************************************************************/
