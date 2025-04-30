@@ -80,35 +80,35 @@
 * %P
 * Input parameters:
 *
-* target_index:   [1]        Relative index of component to focus at, e.g. next is +1 (used to compute 'dist' automatically)
-* dist:           [m]        Distance from the source to the target
-* focus_xw:       [m]        Width of the target (focusing rectangle)
-* focus_yh:       [m]        Height of the target (focusing rectangle)
-* xwidth:         [m]        Width of the source
-* yheight:        [m]        Height of the source
-* radius:         [m]        Outer radius of the source (ignored if xwidth and yheight are set)
-* r_i:            [m]        Radius of a central circle at temperature T1, sorrounded by a ring at temperature T2 (ignored by default)
-* Lmin:           [AA]       Lower edge of the wavelength distribution
-* Lmax:           [AA]       Upper edge of the wavelength distribution
-* freq:           [Hz]       Frequency of pulses
-* t_pulse:        [s]        Proton pulse length
-* tmax_multiplier [1]        Defined maximum emission time at moderator (tmax = tmax_multiplier * t_pulse); 1 for continuous sources
-* n_pulses        [1]        Number of pulses to be simulated (ignored for continuous sources)
-* T1:             [K]        Temperature of the 1st Maxwellian distribution; for r_i > 0 it is only used for the central radii r < r_i
-* I1:    [1/(cm^2 sr s AA)]  Flux per solid angle of the 1st Maxwellian distribution (integrated over the whole wavelength range)
-* tau1:           [s]        Pulse decay time constant of the 1st Maxwellian distribution
-* T2:             [K]        Temperature of the 2nd Maxwellian distribution (0 to disable); for r_i > 0 it is only used for the external ring r > r_i
-* I2:    [1/(cm^2 sr s AA)]  Flux per solid angle of the 2nd Maxwellian distribution
-* tau2:           [s]        Pulse decay time constant of the 2nd Maxwellian distribution
-* T3:             [K]        Temperature of the 3rd Maxwellian distribution (0 to disable)
-* I3:    [1/(cm^2 sr s AA)]  Flux per solid angle of the 3rd Maxwellian distribution
-* tau3:           [s]        Pulse decay time constant of the 3rd Maxwellian distribution
-* n_mod:          [1]        Ratio of pulse decay constant to pulse ascend constant of moderated neutrons (n = tau_decay / tau_ascend)
-* I_um:  [1/(cm^2 sr s AA)]  Flux per solid angle for the under-moderated neutrons
-* tau_um:         [s]        Pulse decay time constant of under-moderated neutrons
-* n_um:           [1]        Ratio of pulse decay constant to pulse ascend constant of under-moderated neutrons
-* chi_um:        [1/AA]      Factor for the wavelength dependence of under-moderated neutrons
-* kap_um:         [1]        Scaling factor for the flux of under-moderated neutrons
+* target_index:    [1]        Relative index of component to focus at, e.g. next is +1 (used to compute 'dist' automatically)
+* dist:            [m]        Distance from the source to the target
+* focus_xw:        [m]        Width of the target (focusing rectangle)
+* focus_yh:        [m]        Height of the target (focusing rectangle)
+* xwidth:          [m]        Width of the source
+* yheight:         [m]        Height of the source
+* radius:          [m]        Outer radius of the source (ignored if xwidth and yheight are set)
+* r_i:             [m]        Radius of a central circle at temperature T1, sorrounded by a ring at temperature T2 (ignored by default)
+* Lmin:            [AA]       Lower edge of the wavelength distribution
+* Lmax:            [AA]       Upper edge of the wavelength distribution
+* freq:            [Hz]       Frequency of pulses
+* t_pulse:         [s]        Proton pulse length
+* tmax_multiplier: [1]        Defined maximum emission time at moderator (tmax = tmax_multiplier * t_pulse); 1 for continuous sources
+* n_pulses:        [1]        Number of pulses to be simulated (ignored for continuous sources)
+* T1:              [K]        Temperature of the 1st Maxwellian distribution; for r_i > 0 it is only used for the central radii r < r_i
+* I1:     [1/(cm^2 sr s AA)]  Flux per solid angle of the 1st Maxwellian distribution (integrated over the whole wavelength range)
+* tau1:            [s]        Pulse decay time constant of the 1st Maxwellian distribution
+* T2:              [K]        Temperature of the 2nd Maxwellian distribution (0 to disable); for r_i > 0 it is only used for the external ring r > r_i
+* I2:     [1/(cm^2 sr s AA)]  Flux per solid angle of the 2nd Maxwellian distribution
+* tau2:            [s]        Pulse decay time constant of the 2nd Maxwellian distribution
+* T3:              [K]        Temperature of the 3rd Maxwellian distribution (0 to disable)
+* I3:     [1/(cm^2 sr s AA)]  Flux per solid angle of the 3rd Maxwellian distribution
+* tau3:            [s]        Pulse decay time constant of the 3rd Maxwellian distribution
+* n_mod:           [1]        Ratio of pulse decay constant to pulse ascend constant of moderated neutrons (n = tau_decay / tau_ascend)
+* I_um:   [1/(cm^2 sr s AA)]  Flux per solid angle for the under-moderated neutrons
+* tau_um:          [s]        Pulse decay time constant of under-moderated neutrons
+* n_um:            [1]        Ratio of pulse decay constant to pulse ascend constant of under-moderated neutrons
+* chi_um:         [1/AA]      Factor for the wavelength dependence of under-moderated neutrons
+* kap_um:          [1]        Scaling factor for the flux of under-moderated neutrons
 *
 * %L
 * This model is implemented in an <a href="https://github.com/pablogila/Source_custom">interactive notebook</a> to fit custom neutron sources.
