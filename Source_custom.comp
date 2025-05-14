@@ -10,7 +10,7 @@
 * %I
 * Written by: Pablo Gila-Herranz, based on 'Source_pulsed' by K. Lieutenant
 * Date: April 2025
-* Version: 2.0.1
+* Version: 2.0.2
 * Origin: Materials Physics Center (CFM-MPC), CSIC-UPV/EHU
 *
 * A flexible pulsed or continuous source with customisable parameters. Multiple pulses can be simulated over time.
