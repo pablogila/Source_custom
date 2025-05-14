@@ -9,8 +9,8 @@
 *
 * %I
 * Written by: Pablo Gila-Herranz, based on 'Source_pulsed' by K. Lieutenant
-* Date: April 2025
-* Version: 2.0.2
+* Date: May 2025
+* Version: 2.1.0
 * Origin: Materials Physics Center (CFM-MPC), CSIC-UPV/EHU
 *
 * A flexible pulsed or continuous source with customisable parameters. Multiple pulses can be simulated over time.
@@ -46,7 +46,7 @@
 * and the joining function for the under-moderated neutrons is given by [1]
 *   $M(\lambda)_{um}=\frac{1}{\lambda(1+\exp(\lambda\chi-\kappa))}$
 *
-* The normalised time structure of the pulse is defined by [2]
+* The normalised time structure of the long pulse is defined by [2]
 *   $N_{t<=t_p}=1-\exp\left(-\frac{t}{\tau/n}\right)$
 *   $N_{t>t_p}=\exp\left(-\frac{t-t_p}{\tau}\right)-\exp\left(-\frac{t}{\tau/n}\right)$
 * where tp is the pulse period, tau is the pulse decay time constant, and n is the ratio of decay to ascend time constants.
@@ -154,10 +154,13 @@ SHARE
   double pulse_carpenter(double time, double tau, double n, double pulse_length){
     if (time <= 0.0  || tau <= 0.0 || n <= 0.0 || pulse_length <= 0.0)
       return 0.0;
-    else if (time <= pulse_length)
-      return (1 - exp(-time/(tau/n))) / pulse_length;
+    double integral_before_pulse_length = (tau * exp(-(n * pulse_length)/tau))/n + pulse_length - tau/n;
+    double integral_after_pulse_length = -(tau * exp(-(n * pulse_length)/tau))/n + tau;
+    double integral = integral_before_pulse_length + integral_after_pulse_length;
+    if (time <= pulse_length)
+      return (1 - exp(-time/(tau/n))) / integral;
     else
-      return (exp(-(time-pulse_length)/tau) - exp(-time/(tau/n))) / pulse_length;
+      return (exp(-(time-pulse_length)/tau) - exp(-time/(tau/n))) / integral;
   }
 %}
 
