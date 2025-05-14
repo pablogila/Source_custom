@@ -10,7 +10,7 @@
 * %I
 * Written by: Pablo Gila-Herranz, based on 'Source_pulsed' by K. Lieutenant
 * Date: May 2025
-* Version: 2.1.0
+* Version: 2.1.1
 * Origin: Materials Physics Center (CFM-MPC), CSIC-UPV/EHU
 *
 * A flexible pulsed or continuous source with customisable parameters. Multiple pulses can be simulated over time.
@@ -154,9 +154,7 @@ SHARE
   double pulse_carpenter(double time, double tau, double n, double pulse_length){
     if (time <= 0.0  || tau <= 0.0 || n <= 0.0 || pulse_length <= 0.0)
       return 0.0;
-    double integral_before_pulse_length = (tau * exp(-(n * pulse_length)/tau))/n + pulse_length - tau/n;
-    double integral_after_pulse_length = -(tau * exp(-(n * pulse_length)/tau))/n + tau;
-    double integral = integral_before_pulse_length + integral_after_pulse_length;
+    double integral = pulse_length + tau - tau/n;
     if (time <= pulse_length)
       return (1 - exp(-time/(tau/n))) / integral;
     else
