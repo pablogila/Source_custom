@@ -1,7 +1,7 @@
 # Source_custom component for McStas
 
 The Source_custom [McStas](https://www.mcstas.org/) component is a flexible pulsed or continuous neutron source for your Monte Carlo simulations.
-Stable versions are available in McStas as a [contributed component](https://github.com/mccode-dev/McCode/blob/main/mcstas-comps/contrib/Source_custom.comp).
+Stable versions are available in McStas as a [contributed component](https://www.mcstas.org/download/components/contrib/Source_custom.html).
 
 The user documentation is embedded in the [Source_component.comp](Source_custom.comp) file,
 and is also available in the [McStas components documentation](https://www.mcstas.org/download/components/).
